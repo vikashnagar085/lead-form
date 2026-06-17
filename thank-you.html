@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - Amity University Online</title>
+    
+    <style>
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #0f2038 0%, #1a365d 100%);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .thankyou-container {
+            background-color: #ffffff;
+            padding: 50px 40px;
+            border-radius: 16px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            max-width: 550px;
+            width: 100%;
+            text-align: center;
+            border-top: 6px solid #ffc72c; /* Amity Gold */
+            position: relative;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: #fff8e1;
+            border: 2px solid #ffc72c;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 25px auto;
+            color: #1a365d;
+            font-size: 40px;
+            box-shadow: 0 8px 20px rgba(255, 199, 44, 0.2);
+            animation: scaleIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+        }
+
+        @keyframes scaleIn {
+            from { transform: scale(0); }
+            to { transform: scale(1); }
+        }
+
+        .thankyou-container h1 {
+            color: #1a365d;
+            font-size: 32px;
+            margin: 0 0 15px 0;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+
+        .thankyou-container p {
+            color: #4a5568;
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 0 0 30px 0;
+        }
+
+        .highlight-box {
+            background-color: #f7fafc;
+            border-left: 4px solid #1a365d;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 35px;
+            text-align: left;
+        }
+
+        .highlight-box span {
+            display: block;
+            font-size: 14px;
+            color: #718096;
+            margin-bottom: 5px;
+        }
+
+        .highlight-box p {
+            margin: 0;
+            font-weight: 600;
+            color: #2d3748;
+            font-size: 15px;
+        }
+
+        .home-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #1a365d 0%, #102a43 100%);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 14px 35px;
+            font-size: 16px;
+            font-weight: 700;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(26, 54, 93, 0.2);
+            letter-spacing: 0.5px;
+        }
+
+        .home-btn:hover {
+            background: linear-gradient(135deg, #ffc72c 0%, #f5b000 100%);
+            color: #1a365d;
+            box-shadow: 0 6px 20px rgba(255, 199, 44, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .home-btn:active {
+            transform: translateY(0);
+        }
+
+        @media (max-width: 480px) {
+            .thankyou-container {
+                padding: 35px 20px;
+            }
+            .thankyou-container h1 {
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="thankyou-container">
+    <div class="success-icon">✓</div>
+    
+    <h1>Thank You!</h1>
+    <p>Your details have been successfully submitted. Thank you for showing interest in Amity University Online.</p>
+    
+    <div class="highlight-box">
+        <span>Next Step:</span>
+        <p>📋 Our expert admission counselors will reach out to you within the next 24 hours to provide comprehensive details about your selected course.</p>
+    </div>
+    
+    <a href="https://amityonline.com/" class="home-btn">← Go to Homepage</a>
+</div>
+
+</body>
+</html>
