@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amity University Online - Admission Inquiry</title>
+    
+    <!-- सुंदर डिजाइन के लिए CSS स्टाइलिंग -->
+    <style>
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            max-width: 450px;
+            width: 100%;
+            border-top: 5px solid #1a365d; /* एमिटी थीम डार्क ब्लू */
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .form-header h2 {
+            margin: 0;
+            color: #1a365d;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .form-header p {
+            margin: 5px 0 0 0;
+            color: #718096;
+            font-size: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            color: #4a5568;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #cbd5e0;
+            border-radius: 6px;
+            font-size: 15px;
+            color: #2d3748;
+            box-sizing: border-box;
+            transition: border-color 0.2s ease;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: #ffc72c; /* एमिटी थीम गोल्ड/येलो */
+            box-shadow: 0 0 0 3px rgba(255, 199, 44, 0.2);
+        }
+
+        .submit-btn {
+            width: 100%;
+            background-color: #1a365d;
+            color: #ffffff;
+            border: none;
+            padding: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            background-color: #102a43;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <div class="form-header">
+        <h2>Amity University Online</h2>
+        <p>अपना विवरण भरें, हमारे एक्सपर्ट काउंसलर आपसे संपर्क करेंगे</p>
+    </div>
+
+    <!-- सेल्सफोर्स वेब-टू-लीड फॉर्म की शुरुआत -->
+    <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DdL00000vvPNR" method="POST">
+
+        <!-- हिडन फील्ड्स (Org ID और Return URL) -->
+        <input type="hidden" name="oid" value="00DdL00000vvPNR">
+        <input type="hidden" name="retURL" value="https://amityonline.com/">
+
+        <!-- फर्स्ट नेम (First Name) -->
+        <div class="form-group">
+            <label for="first_name">First Name</label>
+            <input id="first_name" maxlength="40" name="first_name" type="text" placeholder="John" required />
+        </div>
+
+        <!-- लास्ट नेम (Last Name) -->
+        <div class="form-group">
+            <label for="last_name">Last Name</label>
+            <input id="last_name" maxlength="80" name="last_name" type="text" placeholder="Doe" required />
+        </div>
+
+        <!-- ईमेल (Email) -->
+        <div class="form-group">
+            <label for="email">Email Address</label>
+            <input id="email" maxlength="80" name="email" type="email" placeholder="john.doe@example.com" required />
+        </div>
+
+        <!-- मोबाइल (Mobile) -->
+        <div class="form-group">
+            <label for="mobile">Mobile Number</label>
+            <input id="mobile" maxlength="40" name="mobile" type="tel" placeholder="9876543210" required />
+        </div>
+
+        <!-- कंपनी (Company / College) -->
+        <div class="form-group">
+            <label for="company">Company / Current Institute</label>
+            <input id="company" maxlength="40" name="company" type="text" placeholder="UNIVO / Student" required />
+        </div>
+
+        <!-- शहर (City) -->
+        <div class="form-group">
+            <label for="city">City</label>
+            <input id="city" maxlength="40" name="city" type="text" placeholder="Noida" />
+        </div>
+
+        <!-- राज्य (State) -->
+        <div class="form-group">
+            <label for="state">State/Province</label>
+            <input id="state" maxlength="20" name="state" type="text" placeholder="Uttar Pradesh" />
+        </div>
+
+        <!-- कोर्स चयन (Interested Course) -->
+        <div class="form-group">
+            <label for="00NdL00002NqICH">Interested Course</label>
+            <select id="00NdL00002NqICH" name="00NdL00002NqICH" title="Interested Course" required>
+                <option value="">-- कोर्स चुनें --</option>
+                <option value="BBA Online">BBA Online</option>
+                <option value="BCA Online">BCA Online</option>
+                <option value="MBA Online">MBA Online</option>
+                <option value="MCA Online">MCA Online</option>
+            </select>
+        </div>
+
+        <!-- सबमिट बटन -->
+        <button type="submit" name="submit" class="submit-btn">Submit Inquiry</button>
+
+    </form>
+</div>
+
+</body>
+</html>
