@@ -1,95 +1,165 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amity University Online - Admission Inquiry</title>
     
-    <!-- सुंदर डिजाइन के लिए CSS स्टाइलिंग -->
+    <!-- Premium CSS Styling -->
     <style>
         body {
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background-color: #f4f7f6;
+            background: linear-gradient(135deg, #0f2038 0%, #1a365d 100%);
             margin: 0;
             padding: 40px 20px;
             display: flex;
             justify-content: center;
             align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
         }
 
         .form-container {
             background-color: #ffffff;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-            max-width: 450px;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            max-width: 650px;
             width: 100%;
-            border-top: 5px solid #1a365d; /* एमिटी थीम डार्क ब्लू */
+            border-top: 6px solid #ffc72c; /* Amity Gold Theme */
+            position: relative;
+            overflow: hidden;
+        }
+
+        .form-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, rgba(255,199,44,0.1) 0%, transparent 70%);
+            pointer-events: none;
         }
 
         .form-header {
             text-align: center;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #f0f4f8;
+            padding-bottom: 20px;
         }
 
         .form-header h2 {
             margin: 0;
             color: #1a365d;
-            font-size: 24px;
-            font-weight: 700;
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
         }
 
         .form-header p {
-            margin: 5px 0 0 0;
-            color: #718096;
-            font-size: 14px;
+            margin: 8px 0 0 0;
+            color: #4a5568;
+            font-size: 15px;
+            font-weight: 500;
+            background: #fff8e1;
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 20px;
+            border: 1px solid #ffe082;
+        }
+
+        /* 2-Column Grid Layout */
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
         }
 
         .form-group {
-            margin-bottom: 18px;
+            margin-bottom: 5px;
+        }
+
+        .full-width {
+            grid-column: span 2;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 6px;
-            color: #4a5568;
-            font-size: 14px;
-            font-weight: 600;
+            margin-bottom: 8px;
+            color: #2d3748;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
         }
 
         .form-group input, .form-group select {
             width: 100%;
-            padding: 10px 12px;
+            padding: 12px 14px;
             border: 1px solid #cbd5e0;
-            border-radius: 6px;
+            border-radius: 8px;
             font-size: 15px;
             color: #2d3748;
             box-sizing: border-box;
-            transition: border-color 0.2s ease;
+            background-color: #f8fafc;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:hover, .form-group select:hover {
+            border-color: #a0aec0;
+            background-color: #ffffff;
         }
 
         .form-group input:focus, .form-group select:focus {
             outline: none;
-            border-color: #ffc72c; /* एमिटी थीम गोल्ड/येलो */
-            box-shadow: 0 0 0 3px rgba(255, 199, 44, 0.2);
+            border-color: #1a365d;
+            background-color: #ffffff;
+            box-shadow: 0 0 0 4px rgba(26, 54, 93, 0.15);
         }
 
         .submit-btn {
             width: 100%;
-            background-color: #1a365d;
+            background: linear-gradient(135deg, #1a365d 0%, #102a43 100%);
             color: #ffffff;
-            border: none;
-            padding: 12px;
-            font-size: 16px;
-            font-weight: 600;
-            border-radius: 6px;
+            border: 1px solid #0f2038;
+            padding: 14px;
+            font-size: 18px;
+            font-weight: 700;
+            border-radius: 8px;
             cursor: pointer;
-            transition: background-color 0.2s ease;
-            margin-top: 10px;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 12px rgba(26, 54, 93, 0.2);
         }
 
         .submit-btn:hover {
-            background-color: #102a43;
+            background: linear-gradient(135deg, #ffc72c 0%, #f5b000 100%);
+            color: #1a365d;
+            border-color: #ffc72c;
+            box-shadow: 0 6px 20px rgba(255, 199, 44, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        @media (max-width: 600px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            .full-width {
+                grid-column: span 1;
+            }
+            body {
+                padding: 20px 10px;
+            }
+            .form-container {
+                padding: 25px 20px;
+            }
         }
     </style>
 </head>
@@ -98,72 +168,78 @@
 <div class="form-container">
     <div class="form-header">
         <h2>Amity University Online</h2>
-        <p>अपना विवरण भरें, हमारे एक्सपर्ट काउंसलर आपसे संपर्क करेंगे</p>
+        <p>🎯 Admissions Open - 2026</p>
     </div>
 
-    <!-- सेल्सफोर्स वेब-टू-लीड फॉर्म की शुरुआत -->
+    <!-- Salesforce Web-to-Lead Form -->
     <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DdL00000vvPNR" method="POST">
 
-        <!-- हिडन फील्ड्स (Org ID और Return URL) -->
+        <!-- Hidden Fields -->
         <input type="hidden" name="oid" value="00DdL00000vvPNR">
-        <input type="hidden" name="retURL" value="https://amityonline.com/">
+        
+        <!-- 💡 मुख्य बदलाव यहाँ है: यहाँ अपने थैंक यू पेज का पूरा लिंक डालें -->
+        <input type="hidden" name="retURL" value="http://127.0.0.1:5500/thank-you.html">
 
-        <!-- फर्स्ट नेम (First Name) -->
-        <div class="form-group">
-            <label for="first_name">First Name</label>
-            <input id="first_name" maxlength="40" name="first_name" type="text" placeholder="John" required />
+        <div class="form-grid">
+            <!-- First Name -->
+            <div class="form-group">
+                <label for="first_name">First Name</label>
+                <input id="first_name" maxlength="40" name="first_name" type="text" placeholder="John" required />
+            </div>
+
+            <!-- Last Name -->
+            <div class="form-group">
+                <label for="last_name">Last Name</label>
+                <input id="last_name" maxlength="80" name="last_name" type="text" placeholder="Doe" required />
+            </div>
+
+            <!-- Email Address -->
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input id="email" maxlength="80" name="email" type="email" placeholder="john.doe@example.com" required />
+            </div>
+
+            <!-- Mobile Number -->
+            <div class="form-group">
+                <label for="mobile">Mobile Number</label>
+                <input id="mobile" maxlength="40" name="mobile" type="tel" pattern="[0-9]{10}" placeholder="9876543210" title="Please enter a valid 10-digit mobile number" required />
+            </div>
+
+            <!-- Company / College -->
+            <div class="form-group full-width">
+                <label for="company">Company / Current Institute</label>
+                <input id="company" maxlength="40" name="company" type="text" placeholder="UNIVO / Student" required />
+            </div>
+
+            <!-- City -->
+            <div class="form-group">
+                <label for="city">City</label>
+                <input id="city" maxlength="40" name="city" type="text" placeholder="Noida" />
+            </div>
+
+            <!-- State -->
+            <div class="form-group">
+                <label for="state">State/Province</label>
+                <input id="state" maxlength="20" name="state" type="text" placeholder="Uttar Pradesh" />
+            </div>
+
+            <!-- Interested Course -->
+            <div class="form-group full-width">
+                <label for="00NdL00002NqICH">Interested Course</label>
+                <select id="00NdL00002NqICH" name="00NdL00002NqICH" title="Interested Course" required>
+                    <option value="">-- Select Course --</option>
+                    <option value="BBA Online">BBA Online</option>
+                    <option value="BCA Online">BCA Online</option>
+                    <option value="MBA Online">MBA Online</option>
+                    <option value="MCA Online">MCA Online</option>
+                </select>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="full-width">
+                <button type="submit" name="submit" class="submit-btn">Submit Inquiry →</button>
+            </div>
         </div>
-
-        <!-- लास्ट नेम (Last Name) -->
-        <div class="form-group">
-            <label for="last_name">Last Name</label>
-            <input id="last_name" maxlength="80" name="last_name" type="text" placeholder="Doe" required />
-        </div>
-
-        <!-- ईमेल (Email) -->
-        <div class="form-group">
-            <label for="email">Email Address</label>
-            <input id="email" maxlength="80" name="email" type="email" placeholder="john.doe@example.com" required />
-        </div>
-
-        <!-- मोबाइल (Mobile) -->
-        <div class="form-group">
-            <label for="mobile">Mobile Number</label>
-            <input id="mobile" maxlength="40" name="mobile" type="tel" placeholder="9876543210" required />
-        </div>
-
-        <!-- कंपनी (Company / College) -->
-        <div class="form-group">
-            <label for="company">Company / Current Institute</label>
-            <input id="company" maxlength="40" name="company" type="text" placeholder="UNIVO / Student" required />
-        </div>
-
-        <!-- शहर (City) -->
-        <div class="form-group">
-            <label for="city">City</label>
-            <input id="city" maxlength="40" name="city" type="text" placeholder="Noida" />
-        </div>
-
-        <!-- राज्य (State) -->
-        <div class="form-group">
-            <label for="state">State/Province</label>
-            <input id="state" maxlength="20" name="state" type="text" placeholder="Uttar Pradesh" />
-        </div>
-
-        <!-- कोर्स चयन (Interested Course) -->
-        <div class="form-group">
-            <label for="00NdL00002NqICH">Interested Course</label>
-            <select id="00NdL00002NqICH" name="00NdL00002NqICH" title="Interested Course" required>
-                <option value="">-- कोर्स चुनें --</option>
-                <option value="BBA Online">BBA Online</option>
-                <option value="BCA Online">BCA Online</option>
-                <option value="MBA Online">MBA Online</option>
-                <option value="MCA Online">MCA Online</option>
-            </select>
-        </div>
-
-        <!-- सबमिट बटन -->
-        <button type="submit" name="submit" class="submit-btn">Submit Inquiry</button>
 
     </form>
 </div>
